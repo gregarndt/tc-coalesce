@@ -145,6 +145,7 @@ def list(age, size, key):
         return empty_resp
 
     # Thresholds have been exceeded. Return list for coalescing
+    app.logger.info("{0} supersedes tasks {1}".format(coalesced_list[-1], coalesced_list[:-1]))
     return jsonify({'supersedes': coalesced_list})
 
 
